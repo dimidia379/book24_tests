@@ -1,1 +1,14 @@
-# book24_tests
+# Автотесты для [book24.ru](https://book24.ru)
+# Стек технологий
+![Java](readmeImages/Java.png)
+![Gradle](readmeImages/Gradle.png)
+![JUnit5](readmeImages/JUnit5.png)
+![Selenide](readmeImages/Selenide.png)
+![RestAssured](readmeImages/RestAssured.png)
+![AllureReport](readmeImages/AllureReport.png)
+![Github](readmeImages/Github.png)
+![AllureTestOps](readmeImages/AllureTestOps.png)
+![Jenkins](readmeImages/Jenkins.png)
+![Selenoid](readmeImages/Selenoid.png)
+![Jira](readmeImages/Jira.png)
+![Telegram](readmeImages/Telegram.png)
