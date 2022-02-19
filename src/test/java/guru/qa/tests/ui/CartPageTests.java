@@ -1,8 +1,8 @@
 package guru.qa.tests.ui;
 
 import guru.qa.tests.TestBase;
-import guru.qa.tests.ui.pages.ProductPage;
 import guru.qa.tests.ui.pages.CartPage;
+import guru.qa.tests.ui.pages.ProductPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ public class CartPageTests extends TestBase {
         productPage.addToBag();
         cartPage.openCart();
         cartPage.addOneMoreProductItem();
-        cartPage.shouldBeTwoItemsInCart(2);
+        cartPage.shouldBeTwoItems();
     }
 
     @Test
@@ -40,7 +40,27 @@ public class CartPageTests extends TestBase {
         productPage.addToBag();
         cartPage.openCart();
         cartPage.addOneMoreProductItem();
+        cartPage.addOneMoreProductItem();
         cartPage.removeOneProductItem();
-        cartPage.shouldBeTwoItemsInCart(1);
+        cartPage.shouldBeTwoItems();
+    }
+
+    @Test
+    @DisplayName("Отображение наименования товара в корзине")
+    void productNameTest() {
+        productPage.openProductPage();
+        productPage.addToBag();
+        cartPage.openCart();
+        cartPage.shouldBeProductName();
+    }
+
+    @Test
+    @DisplayName("Удаление товара из корзины")
+    void deletingProductTest() {
+        productPage.openProductPage();
+        productPage.addToBag();
+        cartPage.openCart();
+        cartPage.deleteProduct();
+        cartPage.shouldBeDeletingInfo();
     }
 }

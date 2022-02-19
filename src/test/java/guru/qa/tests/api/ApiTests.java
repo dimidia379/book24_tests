@@ -1,6 +1,7 @@
 package guru.qa.tests.api;
 
 import io.qameta.allure.restassured.AllureRestAssured;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import static org.hamcrest.Matchers.is;
 
 public class ApiTests {
     @Test
+    @DisplayName("Фильтр книг по издательству выдает книги только этого издательства")
     void filterBooksByPublisher() {
         List<String> ids = given()
                 .filter(new AllureRestAssured())
@@ -31,23 +33,8 @@ public class ApiTests {
     }
 
     @Test
-    void addToCart() {
-        given()
-                .filter(new AllureRestAssured())
-                .header("contentType", "application/x-www-form-urlencoded")
-                .header("x-token", X_TOKEN)
-                .formParam("QUANTITY", 1)
-                .formParam("PRODUCT_ID", PRODUCT_ID)
-                .when()
-                .post("https://book24.ru/api/v1/sale/order/basket/")
-                .then()
-                .log().all()
-                .statusCode(200)
-                .body("STATUS", is("OK"))
-                .body("DATA.BASKET_ITEMS.flatten().PRODUCT_ID", hasItem(PRODUCT_ID));;
-    }
-
-    @Test
+    @DisplayName("В списке предложений, выдаваемых при вводе поискового запроса, " +
+            "присутствует соответствующий запросу товар")
     void searchSuggestions() {
         given()
                 .filter(new AllureRestAssured())
@@ -63,6 +50,24 @@ public class ApiTests {
                 .statusCode(200)
                 .body("STATUS", is("OK"))
                 .body("DATA.flatten().title", hasItem(PRODUCT_NAME));
+    }
+
+    @Test
+    @DisplayName("Товар добавляется в корзину")
+    void addToCart() {
+        given()
+                .filter(new AllureRestAssured())
+                .header("contentType", "application/x-www-form-urlencoded")
+                .header("x-token", X_TOKEN)
+                .formParam("QUANTITY", 1)
+                .formParam("PRODUCT_ID", PRODUCT_ID)
+                .when()
+                .post("https://book24.ru/api/v1/sale/order/basket/")
+                .then()
+                .log().all()
+                .statusCode(200)
+                .body("STATUS", is("OK"))
+                .body("DATA.BASKET_ITEMS.flatten().PRODUCT_ID", hasItem(PRODUCT_ID));;
     }
 }
 

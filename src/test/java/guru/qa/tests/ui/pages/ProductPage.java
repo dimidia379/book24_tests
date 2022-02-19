@@ -12,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ProductPage {
 
-    @Step("Открываем главную страницу")
+    @Step("Открываем страницу товара")
     public void openProductPage() {
         open(PRODUCT_URL);
     }

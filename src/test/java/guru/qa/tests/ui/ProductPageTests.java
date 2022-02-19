@@ -15,7 +15,7 @@ public class ProductPageTests extends TestBase {
     }
 
     @Test
-    @DisplayName("В заголовке страницы должно содержаться название товара")
+    @DisplayName("В заголовке страницы содержится название товара")
     void titleTest() {
         productPage.shouldBeProductNameInTitle();
     }
