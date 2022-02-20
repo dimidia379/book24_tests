@@ -2,7 +2,9 @@ package guru.qa.tests.ui;
 
 import guru.qa.tests.TestBase;
 import guru.qa.tests.ui.pages.ProductPage;
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +29,7 @@ public class ProductPageTests extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Кнопка добавления товара в корзину меняет текст на 'Оформить заказ' после добавления товара в корзину")
     void addToCartButtonTextTest() {
         productPage.addToBag();
