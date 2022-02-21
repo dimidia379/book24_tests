@@ -1,4 +1,25 @@
 # Автотесты для [book24.ru](https://book24.ru)
+
+## Cписок проверок:
+
+##UI
+
+- [x] В заголовке страницы товара содержится название товара
+- [x] На странице товара присутствует название товара
+- [x] Кнопка добавления в корзину на странице товара меняет текст на 'Оформить заказ' после добавления товара в корзину
+- [x] В заголовке страницы корзины должно содержаться 'Корзина'
+- [x] Отображение наименования товара в корзине
+- [x] Увеличение количества товара в корзине
+- [x] Уменьшение количества товара в корзине
+- [x] Удаление товара из корзины
+
+##API
+
+- [x] Фильтр книг по издательству выдает книги только этого издательства
+- [x] Фильтр книг по печати по требованию выдает только книги, печатаемые по требованию
+- [x] В списке предложений, выдаваемых при вводе поискового запроса, присутствует соответствующий запросу товар
+- [x] Товар добавляется в корзину
+
 # Стек технологий
 ![Java](readmeImages/Java.png)
 ![Gradle](readmeImages/Gradle.png)
@@ -12,3 +33,50 @@
 ![Selenoid](readmeImages/Selenoid.png)
 ![Jira](readmeImages/Jira.png)
 ![Telegram](readmeImages/Telegram.png)
+
+### Для запуска локально
+```
+gradle clean test
+```
+
+### Для запуска удаленно
+```bash
+clean
+test
+-Dbrowser=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
+-DbrowserSize=${BROWSER_SIZE}
+-DbrowserMobileView="${BROWSER_MOBILE}"
+-DremoteDriverUrl=${REMOTE_DRIVER_URL}
+-DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
+-Dthreads=${THREADS}
+```
+
+
+## Для запусков автотестов используется Jenkins.
+
+##### Пример готовой сборки можно посмотреть [по ссылке](https://jenkins.autotests.cloud/job/09-Julia_Zvereva-lesson23/)
+
+### Параметры запуска в Jenkins
+![Jenkins_params](images/screenshots/Jenkins_params.png)
+
+### Статистика запусков в Jenkins
+![Jenkins_statistic](images/screenshots/Jenkins_statistic.png)
+
+### Отчёт о прохождении автотестов в Allure Report
+![Allure_report](images/screenshots/Allure_report.png)
+
+### Список автотестов в Allure Report
+![Allure_suite](images/screenshots/Allure_suite.png)
+
+### Хранение тестовой документации в Allure TestOps
+![Testops](images/screenshots/Testops_cases.png)
+
+### Прохождение тестов в Allure TestOps
+![Testops](images/screenshots/Testops.png)
+
+### Уведомления о прохождении автотестов в Telegram
+![Telegram](images/screenshots/Telegram.png)
+
+### Видео о прохождении тестов
+![video](images/screenshots/vid.gif)

@@ -3,9 +3,7 @@ package guru.qa.tests.ui;
 import guru.qa.tests.TestBase;
 import guru.qa.tests.ui.pages.CartPage;
 import guru.qa.tests.ui.pages.ProductPage;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class CartPageTests extends TestBase {
 
@@ -17,12 +15,14 @@ public class CartPageTests extends TestBase {
         cartPage.openCart();
     }
 
+    @Tag("ui")
     @Test
     @DisplayName("В заголовке страницы должно содержаться 'Корзина'")
     void titleTest() {
         cartPage.shouldBeCartInTitle();
     }
 
+    @Tag("ui")
     @Test
     @DisplayName("Увеличение количества товара в корзине")
     void increaseItemsOfProductTest() {
@@ -33,6 +33,7 @@ public class CartPageTests extends TestBase {
         cartPage.shouldBeTwoItems();
     }
 
+    @Tag("ui")
     @Test
     @DisplayName("Уменьшение количества товара в корзине")
     void decreaseItemsOfProductTest() {
@@ -45,6 +46,7 @@ public class CartPageTests extends TestBase {
         cartPage.shouldBeTwoItems();
     }
 
+    @Tag("ui")
     @Test
     @DisplayName("Отображение наименования товара в корзине")
     void productNameTest() {
@@ -54,6 +56,7 @@ public class CartPageTests extends TestBase {
         cartPage.shouldBeProductName();
     }
 
+    @Tag("ui")
     @Test
     @DisplayName("Удаление товара из корзины")
     void deletingProductTest() {
