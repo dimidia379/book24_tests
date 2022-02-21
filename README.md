@@ -53,7 +53,7 @@
 ![Allure_suite](readmeImages/Allure_suite.png)
 
 ### Хранение тестовой документации в Allure TestOps
-![Testops](readmeImages/allure_testops_cases.png)
+![Testops](readmeImages/Allure_testops_cases.png)
 
 ### Прохождение тестов в Allure TestOps
 ![Testops](readmeImages/Testops_launch.png)
