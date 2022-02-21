@@ -1,4 +1,4 @@
-![Jenkins_params](readmeImages/book24_logo.png)
+![book24Logo](readmeImages/book24_logo.png)
 # Автотесты для [book24.ru](https://book24.ru)
 ## Cписок проверок:
 
