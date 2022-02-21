@@ -58,7 +58,7 @@
 ![Testops](readmeImages/screenshots/Testops.png)
 
 ### Уведомления о прохождении автотестов в Telegram
-![Telegram](readmeImages/screenshots/Telegram.png)
+![Telegram](readmeImages/book24_telegram_report.png)
 
 ### Видео о прохождении тестов
 ![video](readmeImages/screenshots/vid.gif)

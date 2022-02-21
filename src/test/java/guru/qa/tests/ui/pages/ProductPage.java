@@ -31,11 +31,11 @@ public class ProductPage {
 
     @Step("Нажимаем на кнопку добавления в корзину")
     public void addToBag() {
-        $(byClassName("product-main-button")).click();
+        $("div.product-main-button span.b24-btn__content").click();
     }
 
     @Step("Проверяем, что текст на кнопке добавления в корзину стал 'Оформить заказ'")
     public void shouldBeAnotherTextOnAddToBagButton() {
-        $(".product-main-button .b24-btn__content").shouldHave(Condition.text("Оформить заказ"), Duration.ofSeconds(5));
+        $(".product-main-button .b24-btn__content").shouldHave(Condition.text("Оформить заказ"));
     }
 }
