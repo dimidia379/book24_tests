@@ -34,6 +34,6 @@ public class ProductPage {
 
     @Step("Проверяем, что текст на кнопке добавления в корзину стал 'Оформить заказ'")
     public void shouldBeAnotherTextOnAddToBagButton() {
-        $(".product-main-button a span").shouldHave(Condition.text("Оформить заказ"));
+        $(".product-main-button .b24-btn__content").shouldHave(Condition.text("Оформить заказ"));
     }
 }
