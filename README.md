@@ -1,5 +1,5 @@
+![Jenkins_params](readmeImages/book24_logo.png)
 # Автотесты для [book24.ru](https://book24.ru)
-
 ## Cписок проверок:
 
 ##UI
@@ -26,10 +26,11 @@
 ![JUnit5](readmeImages/JUnit5.png)
 ![Selenide](readmeImages/Selenide.png)
 ![RestAssured](readmeImages/RestAssured.png)
-![AllureReport](readmeImages/AllureReport.png)
-![Github](readmeImages/Github.png)
-![AllureTestOps](readmeImages/AllureTestOps.png)
 ![Jenkins](readmeImages/Jenkins.png)
+
+![AllureReport](readmeImages/AllureReport.png)
+![AllureTestOps](readmeImages/AllureTestOps.png)
+![Github](readmeImages/Github.png)
 ![Selenoid](readmeImages/Selenoid.png)
 ![Jira](readmeImages/Jira.png)
 ![Telegram](readmeImages/Telegram.png)
@@ -52,23 +53,26 @@
 ![Allure_suite](readmeImages/Allure_suite.png)
 
 ### Хранение тестовой документации в Allure TestOps
-![Testops](readmeImages/screenshots/Testops_cases.png)
+![Testops](readmeImages/allure_testops_cases.png)
 
 ### Прохождение тестов в Allure TestOps
-![Testops](readmeImages/screenshots/Testops.png)
+![Testops](readmeImages/Testops_launch.png)
 
 ### Уведомления о прохождении автотестов в Telegram
 ![Telegram](readmeImages/book24_telegram_report.png)
 
-### Видео о прохождении тестов
-![video](readmeImages/screenshots/vid.gif)
+### Интеграция тестов c таск-трекер системой Jira
+![Telegram](readmeImages/jira_issue.png)
 
-### Для запуска локально
+### Видео о прохождении тестов
+![video](readmeImages/video.gif)
+
+### Команда для локального запуска
 ```
 gradle clean test
 ```
 
-### Для запуска удаленно
+### Команда для удаленного запуска
 ```bash
 clean
 test

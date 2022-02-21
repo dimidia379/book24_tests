@@ -3,8 +3,6 @@ package guru.qa.tests.ui.pages;
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
-import java.time.Duration;
-
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$;
