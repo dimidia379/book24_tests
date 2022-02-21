@@ -9,7 +9,7 @@ import static guru.qa.tests.TestData.PRODUCT_NAME;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CartPage {
-    @Step("Открываем страницу избранного")
+    @Step("Открываем корзину")
     public void openCart() {
         open(CART_URL);
     }
@@ -44,7 +44,7 @@ public class CartPage {
         $$(".delete-button__caption").get(2).click();
     }
 
-    @Step("Проверяем, на месте удаленного товара отображается сообщени об удалении")
+    @Step("Проверяем, на месте удаленного товара отображается сообщение об удалении")
     public void shouldBeDeletingInfo() {
         $(".cart-page__product").text().startsWith("Вы удалили из корзины");
     }

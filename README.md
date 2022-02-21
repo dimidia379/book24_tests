@@ -34,6 +34,35 @@
 ![Jira](readmeImages/Jira.png)
 ![Telegram](readmeImages/Telegram.png)
 
+
+## Для запусков автотестов используется Jenkins.
+
+##### Пример готовой сборки можно посмотреть [по ссылке](https://jenkins.autotests.cloud/job/09-Julia_Zvereva-lesson23/)
+
+### Параметры запуска в Jenkins
+![Jenkins_params](readmeImages/Jenkins_params.png)
+
+### Статистика запусков в Jenkins
+![Jenkins_statistic](readmeImages/Jenkins_statistic.png)
+
+### Отчёт о прохождении автотестов в Allure Report
+![Allure_report](readmeImages/Allure_report.png)
+
+### Список автотестов в Allure Report
+![Allure_suite](readmeImages/Allure_suite.png)
+
+### Хранение тестовой документации в Allure TestOps
+![Testops](readmeImages/screenshots/Testops_cases.png)
+
+### Прохождение тестов в Allure TestOps
+![Testops](readmeImages/screenshots/Testops.png)
+
+### Уведомления о прохождении автотестов в Telegram
+![Telegram](readmeImages/screenshots/Telegram.png)
+
+### Видео о прохождении тестов
+![video](readmeImages/screenshots/vid.gif)
+
 ### Для запуска локально
 ```
 gradle clean test
@@ -51,32 +80,3 @@ test
 -DvideoStorage=https://${REMOTE_DRIVER_URL}/video/
 -Dthreads=${THREADS}
 ```
-
-
-## Для запусков автотестов используется Jenkins.
-
-##### Пример готовой сборки можно посмотреть [по ссылке](https://jenkins.autotests.cloud/job/09-Julia_Zvereva-lesson23/)
-
-### Параметры запуска в Jenkins
-![Jenkins_params](images/screenshots/Jenkins_params.png)
-
-### Статистика запусков в Jenkins
-![Jenkins_statistic](images/screenshots/Jenkins_statistic.png)
-
-### Отчёт о прохождении автотестов в Allure Report
-![Allure_report](images/screenshots/Allure_report.png)
-
-### Список автотестов в Allure Report
-![Allure_suite](images/screenshots/Allure_suite.png)
-
-### Хранение тестовой документации в Allure TestOps
-![Testops](images/screenshots/Testops_cases.png)
-
-### Прохождение тестов в Allure TestOps
-![Testops](images/screenshots/Testops.png)
-
-### Уведомления о прохождении автотестов в Telegram
-![Telegram](images/screenshots/Telegram.png)
-
-### Видео о прохождении тестов
-![video](images/screenshots/vid.gif)
