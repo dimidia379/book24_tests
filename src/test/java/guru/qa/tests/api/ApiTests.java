@@ -43,7 +43,6 @@ public class ApiTests {
                 .header("contentType", "application/json")
                 .header("x-token", X_TOKEN)
                 .queryParam("filter", "demand_print=1")
-                //.queryParam("include", "author,badge,publishingHouse")
                 .when()
                 .get(API_CATALOG_URL)
                 .then()
