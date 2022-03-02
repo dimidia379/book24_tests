@@ -5,9 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static guru.qa.tests.TestData.*;
 import static io.restassured.RestAssured.given;
@@ -15,9 +13,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 
+@Tag("api")
 public class ApiTests {
 
-    @Tag("api")
     @Test
     @DisplayName("Фильтр книг по издательству выдает книги только этого издательства")
     void filterBooksByPublisher() {
@@ -28,7 +26,7 @@ public class ApiTests {
                 .queryParam("filter", "publi_id=" + PUBLISHER_ID)
                 .queryParam("include", "author,badge,publishingHouse")
                 .when()
-                .get("https://book24.ru/api/v1/internal/catalog/product/")
+                .get(API_CATALOG_URL)
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -37,7 +35,6 @@ public class ApiTests {
         assertThat(ids.stream().allMatch(PUBLISHER_ID::equals)).isTrue();
     }
 
-    @Tag("api")
     @Test
     @DisplayName("Фильтр книг по печати по требованию выдает только книги, печатаемые по требованию")
     void filterBooksByPrintOnDemand() {
@@ -48,7 +45,7 @@ public class ApiTests {
                 .queryParam("filter", "demand_print=1")
                 //.queryParam("include", "author,badge,publishingHouse")
                 .when()
-                .get("https://book24.ru/api/v1/internal/catalog/product/")
+                .get(API_CATALOG_URL)
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -57,7 +54,6 @@ public class ApiTests {
         assertThat(isDemandPrint.stream().allMatch(x ->x==true)).isTrue();
     }
 
-    @Tag("api")
     @Test
     @DisplayName("В списке предложений, выдаваемых при вводе поискового запроса, " +
             "присутствует соответствующий запросу товар")
@@ -70,7 +66,7 @@ public class ApiTests {
                 .queryParam("limit_suggest", 5)
                 .queryParam("limit_product", 5)
                 .when()
-                .get("https://book24.ru/api/v1/catalog/search/suggests/")
+                .get(API_SEARCH_SUGGESTS_URL)
                 .then()
                 .log().body()
                 .statusCode(200)
@@ -78,7 +74,6 @@ public class ApiTests {
                 .body("DATA.flatten().title", hasItem(PRODUCT_NAME));
     }
 
-    @Tag("api")
     @Test
     @DisplayName("Товар добавляется в корзину")
     void addToCart() {
@@ -89,7 +84,7 @@ public class ApiTests {
                 .formParam("QUANTITY", 1)
                 .formParam("PRODUCT_ID", PRODUCT_ID)
                 .when()
-                .post("https://book24.ru/api/v1/sale/order/basket/")
+                .post(API_ADD_TO_BASKET)
                 .then()
                 .log().all()
                 .statusCode(200)
@@ -97,4 +92,3 @@ public class ApiTests {
                 .body("DATA.BASKET_ITEMS.flatten().PRODUCT_ID", hasItem(PRODUCT_ID));;
     }
 }
-
